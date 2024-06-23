@@ -15,8 +15,6 @@ public class NotificationController {
         this.messageService = emailService;
     }
 
-
-
     @GetMapping("/notification")
     public String getNotification() {
         return messageService.getSendMessage();
