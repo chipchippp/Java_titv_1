@@ -8,12 +8,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class NotificationController {
+//    Field injection là cách tiêm phụ thuộc vào Spring Framework
+//    thông qua việc sử dụng annotation @Autowired.
+    @Autowired
     private IMessageService messageService;
 
-    @Autowired
-    public NotificationController(EmailService emailService) {
-        this.messageService = emailService;
-    }
+//    Constructor injection
+//    @Autowired
+//    public NotificationController(EmailService emailService) {
+//        this.messageService = emailService;
+//    }
+
+//    Setter injection
+//    @Autowired
+//    public void setMessageService(EmailService emailService) {
+//        this.messageService = emailService;
+//    }
 
     @GetMapping("/notification")
     public String getNotification() {
