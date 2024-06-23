@@ -15,10 +15,6 @@ public class NotificationController {
         this.messageService = emailService;
     }
 
-    @Autowired
-    public void setMessageService(EmailService emailService) {
-        this.messageService = emailService;
-    }
 
 
     @GetMapping("/notification")
