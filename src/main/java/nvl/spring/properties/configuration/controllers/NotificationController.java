@@ -13,15 +13,16 @@ public class NotificationController {
 //    thông qua việc sử dụng annotation @Autowired.
 //@Autowired
     private final IMessageService emailService;
-    private final IMessageService zaloService;
-    private final IMessageService smsService;
+//    private final IMessageService zaloService;
+//    private final IMessageService smsService;
 
 //    Constructor injection
     @Autowired
-    public NotificationController(@Qualifier("emailService") IMessageService emailService,@Qualifier("zaloService") IMessageService zaloService,@Qualifier("smsService") IMessageService smsService) {
+//    @Qualifier("emailService")
+    public NotificationController( IMessageService emailService) {
         this.emailService = emailService;
-        this.zaloService = zaloService;
-        this.smsService = smsService;
+//        this.zaloService = zaloService;
+//        this.smsService = smsService;
     }
 
 //    Setter injection
@@ -35,13 +36,13 @@ public class NotificationController {
         return emailService.getSendMessage();
     }
 
-    @GetMapping("/sendZalo")
-    public String getZalo() {
-        return zaloService.getSendMessage();
-    }
-
-    @GetMapping("/sendSms")
-    public String getSms() {
-        return smsService.getSendMessage();
-    }
+//    @GetMapping("/sendZalo")
+//    public String getZalo() {
+//        return zaloService.getSendMessage();
+//    }
+//
+//    @GetMapping("/sendSms")
+//    public String getSms() {
+//        return smsService.getSendMessage();
+//    }
 }
