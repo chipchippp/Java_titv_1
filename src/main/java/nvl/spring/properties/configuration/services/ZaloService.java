@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy
 public class ZaloService implements IMessageService{
 //    Layzy là một annotation giúp Spring Boot tạo ra một bean
 //    khi nó được yêu cầu, không phải khi ứng dụng được khởi động.

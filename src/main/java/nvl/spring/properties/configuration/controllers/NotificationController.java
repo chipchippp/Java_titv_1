@@ -19,7 +19,10 @@ public class NotificationController {
 //    Constructor injection
     @Autowired
 //    @Qualifier("emailService")
-    public NotificationController( IMessageService emailService, IMessageService zaloService, IMessageService smsService) {
+    public NotificationController(
+           @Qualifier("emailService") IMessageService emailService,
+           @Qualifier("emailService") IMessageService zaloService,
+           @Qualifier("smsService") IMessageService smsService) {
         this.emailService = emailService;
         this.zaloService = zaloService;
         this.smsService = smsService;
@@ -36,6 +39,10 @@ public class NotificationController {
         return emailService.getSendMessage();
     }
 
+//    @GetMapping ("/check")
+//    public String check() {
+//        return this.emailService== this.zaloService ? "Singleton" : "Prototype";
+//    }
     @GetMapping("/sendZalo")
     public String getZalo() {
         return zaloService.getSendMessage();
